@@ -22,13 +22,19 @@
             <legend>Numero verificado</legend>
             <?php
                 $numero = $_GET["n"];
-            
-            
+
+        //Desvio condicional composto
                 if ($numero > 0) {
                 echo "<h1 style='text-align: center'>Positivo!</h1>";
-                } if ($numero > 10 ) {
+                 if ($numero > 10 ) {
                     echo "<h1 style='text-align: center'>Valido!</h1>";
+                 }
+                 } else{
+                    echo "<h1 style='text-align: center'>Negativo!</h1>";
                 }
+
+                // condição ? verdadeiro : falso;
+           // echo ($numero >0) ? "h1 style='text align: center'>Positivo!</h1>" : "<h1 style='text align: center'>Negativo!</h1>"
             ?>
         <br>
         </fieldset>

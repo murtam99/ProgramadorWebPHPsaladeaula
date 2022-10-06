@@ -18,9 +18,9 @@
     $valor = $_GET["valor"];
     $quantidade = $_GET["quantidade"];
 
-    $total = $valor * $quantidade; //if = condição
-    $desconto1 = 0 ($total * 10) = 300; 
-    $desconto2 = 0 ($quantidade < 5) /7;
+    $total = $valor * $qtd;
+    $desconto1 = 0;
+    $desconto2 = 0;
     $valor_total_desconto = 0;
 
     if($valor > 300){
@@ -32,16 +32,15 @@
     }
 
     $valor_total_desconto =  $total - $desconto1 - $desconto2;
-
-    
-    echo "********************* Formas de Pagamento **********************<br>";
-    echo "Valor do Produto: R$ ". number_format($valor, 2, ",",".");
-    echo "<br>Valor de desconto pagando à vista R$". number_format($desconto, 2, ",",".");
-    echo "<br>Valor do Produto à vista: R$ ". number_format($valor_a_vista, 2, ",",".");
-    echo "<br>Valor Acrescido em Pagamento parcelado: R$ " . number_format($acrescimo, 2, ",",".");
-    echo "<br>Valor das 10 parcelas: R$ " . number_format($valor_parcerlas, 2, ",", ".");
-    echo "<br>Valor total parcelado: R$ " . number_format($valor_total_parcelado, 2, ",", ".");
-
+    echo "valor do produto R$ ". number_format($valor, 2, ",", ".") . "a Quantidade é: ". $quantidade;
+    echo "<br>";
+    echo "Desconto 1 = R$ ". number_format($desconto1, 2, "," ,".");
+    echo "<br>";
+    echo "Desconto 2 = R$ ". number_format($desconto2, 2, ",", ".");
+    echo "<br>";
+    echo "Valor total = R$ ". number_format($total, 2, ",", ".");
+    echo "<br>";
+    echo "Valor com desconto = R$ ". number_format($valor_total_desconto, 2, ",", "."); 
     ?>
     <br>
     </fieldset>
