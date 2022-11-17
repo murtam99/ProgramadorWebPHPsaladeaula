@@ -150,10 +150,3 @@ class Cliente {
         $this->ativo = $ativo;
     }
 }
-
-
-
-
-
-
-

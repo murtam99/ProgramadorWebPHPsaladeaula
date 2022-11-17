@@ -72,12 +72,18 @@ header input[type=text] {
     border: none;
 }
 
-#cliente {
+.cliente {
     position: absolute;
     right: 5px;
     top: 0;
     background-color: none;
     border: none;
+}
+
+.fotoProduto{
+    height: 200px;
+    margin: auto;
+    object-fit: cover;
 }
 
 header nav {
@@ -195,7 +201,7 @@ aside {
     position: relative;
     /* top: -34px; */
     /* bottom: 190px; */
-    bottom: 34px; 
+    bottom: 36px;
     right: 20px;
     clear: right;
     /* background-color: var(--cor-secundaria); */

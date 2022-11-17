@@ -9,13 +9,15 @@
 	<!--  -->
 	<body>
 		<?php include "html/header.php";
-		require_once "src/conexao.php";
+        require_once "src/conexao.php";
+        
+        $id= isset($_GET["id"]) ? $_GET["id"] : 0;
 
 		$sql_code = "SELECT * FROM produtos";
 		$sql_query = $conexao->query($sql_code);
 		?>
 		<main>
-			<h1>Produtos</h1>
+			<h1>Estoque</h1>
 			<h3>Lista cadastrados</h3>
 			<table class="table table-bordered">
 			      <tr>
@@ -40,8 +42,8 @@
 					  <td><?= $produto['fabricante']?></td>
 					  <td><?= $produto['ativo']?></td>
 					  <td>
-					  <a href="estoque.php?id=<?=$cliente['idproduto']; ?>">[ESTOQUE]</a>
-                        <a href="mais_detalhes.php?id=<?=$cliente['idproduto']; ?>">[DETALHES]</a>
+					  <a href="edicaoCliente.php?id=<?=$cliente['idproduto']; ?>">[ESTOQUE]</a>
+                        <a href="excluirCliente.php?id=<?=$cliente['idproduto']; ?>">[EXCLUIR]</a>
 						</td>
 				  </tr>
 				  <?php
