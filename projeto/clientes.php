@@ -8,8 +8,19 @@
 	<!--  -->
 	<body>
 		<?php 
-        include "html/header.php"; 
         require_once "src/conexao.php";
+        require_once "src/protect.php";
+        if(!isset($_SESSION['tipo'])){
+            header("Location: nao_permitido.php");
+        }
+        include "html/header.php"; 
+
+        
+        $id = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
+        $nome = isset($_SESSION["nome"]) ? $_SESSION["nome"] : "";
+        $tipo = isset($_SESSION['tipo']) ? $_SESSION['tipo'] : "";
+
+       
 
         $lista = [];
         $sql_code = "SELECT * FROM cliente";
@@ -20,12 +31,9 @@
             // var_dump($lista);
         }
 
-        if(!isset($_SESSION)){
-            session_start();
-        }
-    
-        $id = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
-        $nome = isset($_SESSION["nome"]) ? $_SESSION["nome"] : "";
+        //if(!isset($_SESSION)){
+        //    session_start();
+        //}
 
         // echo "ID: $id - Cliente: $nome";
         ?>
@@ -63,12 +71,12 @@
                     <td>
                         <a href="edicaoCliente.php?id=<?=$cliente['idcliente']; ?>">
                         <!-- [EDITAR] --> 
-                        <i class="bi bi-pencil-square" style="font-size: 2rem;"></i>
+                        <
                         </a>
                         <?php if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "Administrador"){?>
-                        <a href="excluirCliente.php?id=<?=$cliente['idcliente']; ?>"> 
-                        <!--[EXCLUIR] -->
-                        <i class="bi bi-trash" style="font-size: 2rem; color: red;"><i>
+                        <a href= "#" onclick="confirmarApagar(<?=$cliente['idcliente']; ?>)">
+                        <!-- [EXCLUIR] -->
+                        <i class="bi bi-trash" style="font-size: 2rem; color: red;"></i>
                         </a>                        
                         <?php } ?>
                     </td>
@@ -87,6 +95,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
+        <script src="src/js/confirmacao.js"></script>
 
 </body>
 
