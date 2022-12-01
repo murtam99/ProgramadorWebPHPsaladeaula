@@ -27,7 +27,7 @@
         <a href="edicaoCliente.php?id=<?=$id; ?>">
 		<div class="col">
 		<div class="card">
-  <i class="bi bi-person-square text-center text-center" style="font-size: 10rem;"></i>
+  <i class="bi bi-person-square text-center text-center-sucess" style="font-size: 10rem;"></i>
   <div class="card-body">
     <h5 class="card-title text-center">Dados Pessoais</h5>
   </div>

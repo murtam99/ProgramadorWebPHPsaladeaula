@@ -117,7 +117,7 @@
 					<label class="form-label">Sexo</label><br>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="sexo" id="sexo_id1" value="M" 
-						<?=($cliente['sexo'] == 'M') ? 'checked' : ''?>>
+						<?=($cliente['sexo'] == 'M') ? 'checked' : ''?>
 
 						<label class="form-check-label" for="sexo_id1">
 							Masculino
@@ -149,7 +149,7 @@
 				</div>
 				<div class="col-12">
 					<button class="btn btn-primary" type="submit" id="btn-off" disabled style="display: none">Atualizar</button>
-					<button class="btn btn-primary" type="submit" id="btn-on" >Atualizar</button>
+					<button class="btn btn-primary" type="submit" id="btn-on">Atualizar</button>
 				</div>
 			</form>
 		</div>
